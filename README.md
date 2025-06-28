@@ -1,34 +1,66 @@
-# Heart Disease Prediction using Bayesian Networks  
-This project predicts the presence of heart disease using a Bayesian Network model trained on medical data. It utilizes the `pgmpy` library in Python to build and infer from a probabilistic graphical model.  
-## 🔍 Overview  
-The dataset (`heart_disease.csv`) includes the following features: Age, Sex, Chest pain type, Resting blood pressure, Cholesterol, Fasting blood sugar, Resting ECG, Maximum heart rate achieved, Exercise-induced angina, ST depression, Number of major vessels, Thalassemia, and Target (0 = no heart disease, 1 = heart disease). The goal is to predict the probability of heart disease (target) based on these features using a Bayesian Network.  
-## 🛠️ Setup Instructions  
-1. Clone the repository  
-   `git clone https://github.com/23241a6749/heart-disease-bayes.git && cd heart-disease-bayes`  
-2. Create and activate a virtual environment  
-   `python -m venv venv && venv\Scripts\activate` (Windows) or `source venv/bin/activate` (Linux/macOS)  
-3. Install dependencies  
-   `pip install -r requirements.txt`  
-4. Run the project  
-   `python main.py`  
-## 📁 Project Structure  
-`heart-disease-bayes/`  
-├── `heart_disease.csv` – Input dataset  
-├── `main.py` – Main script to train & predict  
-├── `requirements.txt` – Python dependencies  
-└── `.gitignore` – To ignore venv and large files  
-## 🧪 Features  
-- Label encoding for categorical data  
-- Manual definition of Bayesian Network structure  
-- Parameter learning using Maximum Likelihood Estimation (MLE)  
-- Interactive CLI-based prediction using probabilistic inference  
-## 📝 Sample Usage  
-When executed, the script prompts for input values such as age, cholesterol, etc., and returns the predicted probability of having heart disease based on the trained Bayesian Network.  
-## ⚠️ Notes  
-- Do not push the `venv/` folder to GitHub  
-- Avoid committing files over 100MB (e.g., `.dll`, `.lib`)  
-- Use Git LFS if large files are essential  
-## 👨‍💻 Author  
-GitHub: [@23241a6749](https://github.com/23241a6749)  
-## 📜 License  
-This project is licensed under the [MIT License](LICENSE)  
+# Heart Disease Prediction using Bayesian Networks
+
+This project predicts the probability of heart disease using a Bayesian Network built with `pgmpy`. It involves data preprocessing, structure definition, parameter estimation (MLE), and inference using user input.
+
+## 📁 Repository Contents
+
+- `heart_disease.csv`: Cleaned dataset  
+- `main.py`: Script for building the model and running inference  
+- `requirements.txt`: Python dependencies  
+- `bayesian_network.png`: Visualization of the learned Bayesian Network  
+- `inference_output.txt`: Output showing inferred probability of heart disease  
+- `.gitignore`: Ignores virtual environment and other unnecessary files  
+- `README.md`: This documentation
+
+## 🛠️ Setup Instructions
+
+1. Clone the repo:  
+   git clone https://github.com/23241a6749/heart-disease-bayes.git
+
+2. Navigate into the project:  
+   cd heart-disease-bayes
+
+3. Create virtual environment:  
+   python -m venv venv
+
+4. Activate the environment:  
+   - On Windows: venv\Scripts\activate  
+   - On Unix/Mac: source venv/bin/activate
+
+5. Install dependencies:  
+   pip install -r requirements.txt
+
+## 🚀 Run the Project
+
+To start the Bayesian model and get predictions:  
+Run:  
+python main.py  
+It will prompt you for inputs like age, sex, chest pain type, etc. Based on your inputs, it computes and displays the probability of heart disease and saves the result in `inference_output.txt`.
+
+## 📊 Visualizations
+
+The file `bayesian_network.png` shows the learned Bayesian Network structure, connecting features like age, cholesterol, restecg, etc. You can visually interpret how these attributes influence the `target` variable (presence of heart disease).
+
+## ✅ Sample Output
+
+Enter Age: 56  
+Enter Sex (0 = female, 1 = male): 1  
+Enter Chest Pain Type (0–3): 2  
+...  
+Predicted Probability of Heart Disease: 0.76  
+(Also saved in `inference_output.txt`)
+
+## 🧠 Libraries Used
+
+- pandas  
+- networkx  
+- matplotlib  
+- pgmpy  
+
+## 👤 Author
+
+GitHub: [23241a6749](https://github.com/23241a6749)
+
+## 📝 License
+
+This project is licensed under the MIT License.
