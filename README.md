@@ -43,16 +43,20 @@ bayes-heart-disease/
 ## 📊 Visualizations
 
 ### 1. Bayesian Network Structure  
-![Bayesian Network](images/bayesian_network.png)
+![Bayesian Network]![bayesian_network](https://github.com/user-attachments/assets/a4cf5eff-f458-4bb8-be25-92ae6ef31cf9)
+
 
 ### 2. Cholesterol Distribution (Given Heart Disease)  
-![P(chol | target=1)](images/p_chol_given_target_1.png)
+![P(chol | target=1)]![p_chol_given_target_1](https://github.com/user-attachments/assets/9cd62606-333d-46ca-9bbf-eded76708e05)
+
 
 ### 3. Max Heart Rate Distribution (Given No Heart Disease)  
-![P(thalach | target=0)](images/p_thalach_given_target_0.png)
+![P(thalach | target=0)]![p_thalach_given_target_0](https://github.com/user-attachments/assets/b4d1acb6-1ad4-4a0f-b473-a59c88d60e3d)
+
 
 ### 4. Heart Disease Probability Based on Age  
-![P(target | age)](images/p_target_given_age.png)
+![P(target | age)]![p_target_given_age](https://github.com/user-attachments/assets/e7b310ad-179a-411f-99c8-a952dfb42233)
+
 
 ## 🚀 How to Run
 1. Clone the repository:
