@@ -1,66 +1,83 @@
 # Heart Disease Prediction using Bayesian Networks
 
-This project predicts the probability of heart disease using a Bayesian Network built with `pgmpy`. It involves data preprocessing, structure definition, parameter estimation (MLE), and inference using user input.
+This project uses a **Bayesian Network** to model and predict the likelihood of heart disease based on features from the UCI Heart Disease dataset. The model is trained using Maximum Likelihood Estimation and performs probabilistic inference with visual outputs.
 
-## 📁 Repository Contents
+## 📁 Project Structure
+```
+bayes-heart-disease/
+├── heart_disease.csv
+├── cleaned_heart_disease.csv
+├── main.py
+├── images/
+│   ├── bayesian_network.png
+│   ├── p_chol_given_target_1.png
+│   ├── p_thalach_given_target_0.png
+│   └── p_target_given_age.png
+└── README.md
+```
 
-- `heart_disease.csv`: Cleaned dataset  
-- `main.py`: Script for building the model and running inference  
-- `requirements.txt`: Python dependencies  
-- `bayesian_network.png`: Visualization of the learned Bayesian Network  
-- `inference_output.txt`: Output showing inferred probability of heart disease  
-- `.gitignore`: Ignores virtual environment and other unnecessary files  
-- `README.md`: This documentation
+## 📌 Features Used
+- `age`
+- `fbs` (fasting blood sugar)
+- `chol` (serum cholesterol)
+- `thalach` (maximum heart rate)
+- `target` (0 = no disease, 1 = disease)
 
-## 🛠️ Setup Instructions
-
-1. Clone the repo:  
-   git clone https://github.com/23241a6749/heart-disease-bayes.git
-
-2. Navigate into the project:  
-   cd heart-disease-bayes
-
-3. Create virtual environment:  
-   python -m venv venv
-
-4. Activate the environment:  
-   - On Windows: venv\Scripts\activate  
-   - On Unix/Mac: source venv/bin/activate
-
-5. Install dependencies:  
-   pip install -r requirements.txt
-
-## 🚀 Run the Project
-
-To start the Bayesian model and get predictions:  
-Run:  
-python main.py  
-It will prompt you for inputs like age, sex, chest pain type, etc. Based on your inputs, it computes and displays the probability of heart disease and saves the result in `inference_output.txt`.
+## ⚙️ How It Works
+1. **Load and Clean Data**  
+   The dataset is loaded, duplicates and missing values are removed, and numerical features are normalized using `MinMaxScaler`.
+2. **Model Definition**  
+   A Bayesian Network is defined with the following dependencies:  
+   - `age → fbs → target`  
+   - `target → chol`  
+   - `target → thalach`
+3. **Training**  
+   The network is trained using Maximum Likelihood Estimation on the cleaned dataset.
+4. **Inference**  
+   - `P(target | age=valid)`  
+   - `P(chol | target=1)`  
+   - `P(thalach | target=0)`
+5. **Visualization**  
+   The model structure and inference results are plotted and saved into the `images/` directory.
 
 ## 📊 Visualizations
 
-The file `bayesian_network.png` shows the learned Bayesian Network structure, connecting features like age, cholesterol, restecg, etc. You can visually interpret how these attributes influence the `target` variable (presence of heart disease).
+### 1. Bayesian Network Structure  
+![Bayesian Network](images/bayesian_network.png)
 
-## ✅ Sample Output
+### 2. Cholesterol Distribution (Given Heart Disease)  
+![P(chol | target=1)](images/p_chol_given_target_1.png)
 
-Enter Age: 56  
-Enter Sex (0 = female, 1 = male): 1  
-Enter Chest Pain Type (0–3): 2  
-...  
-Predicted Probability of Heart Disease: 0.76  
-(Also saved in `inference_output.txt`)
+### 3. Max Heart Rate Distribution (Given No Heart Disease)  
+![P(thalach | target=0)](images/p_thalach_given_target_0.png)
 
-## 🧠 Libraries Used
+### 4. Heart Disease Probability Based on Age  
+![P(target | age)](images/p_target_given_age.png)
 
-- pandas  
-- networkx  
-- matplotlib  
-- pgmpy  
+## 🚀 How to Run
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/bayes-heart-disease.git
+   cd bayes-heart-disease
+   ```
 
-## 👤 Author
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-GitHub: [23241a6749](https://github.com/23241a6749)
+3. Run the script:
+   ```bash
+   python main.py
+   ```
 
-## 📝 License
+## ✅ Requirements
+- Python 3.8+
+- `pgmpy`
+- `matplotlib`
+- `pandas`
+- `scikit-learn`
+- `networkx`
+---
 
-This project is licensed under the MIT License.
+© 2025 Bayesian Heart Disease Project
